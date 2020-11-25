@@ -20,14 +20,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    packagingOptions {
-        exclude 'META-INF/NOTICE.md'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE.md'
-        exclude 'META-INF/NOTICE.markdown'
-        exclude 'mozilla/public-suffix-list.txt'
-    }
 }
 
 dependencies {
@@ -38,5 +30,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'org.telegram:telegrambots:5.0.1'
+    implementation 'com.github.pengrad:java-telegram-bot-api:5.0.0'
 }

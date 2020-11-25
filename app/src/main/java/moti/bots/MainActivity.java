@@ -1,12 +1,11 @@
 package moti.bots;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+import moti.bots.background.BotsService;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,11 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot(new ArticleHackerBot());
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+//        ArticleHackerBot.getInstance().start();
+
+        startService(new Intent(this, BotsService.class));
     }
 }
